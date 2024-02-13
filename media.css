@@ -1,0 +1,71 @@
+@media only screen and (min-width: 528px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+    grid-template-areas:
+      "child1 child1"
+      "child2 child3"
+      "child4 child4"
+      "child5 child5";
+  }
+
+  main > :nth-child(1) {
+    grid-area: child1;
+  }
+
+  main > :nth-child(2) {
+    grid-area: child2;
+  }
+  main > :nth-child(3) {
+    grid-area: child3;
+  }
+  main > :nth-child(4) {
+    grid-area: child4;
+  }
+  main > :nth-child(5) {
+    grid-area: child5;
+  }
+
+  .grid-container {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 608px) {
+  main {
+    grid-template-areas:
+      "child1 child1"
+      "child2 child5 "
+      "child3 child5"
+      "child4 child4";
+  }
+}
+@media only screen and (min-width: 860px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+
+    grid-template-areas:
+      "child1 child1 child2"
+      "child5 child5 child5"
+      "child3 child4 child4";
+  }
+
+  @media only screen and (min-width: 1200px) {
+    :root {
+      font-size: 56%;
+    }
+
+    main {
+      max-width: 1120px;
+      margin-inline: auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, minmax(200px, auto));
+      grid-template-areas:
+        "child1 child1 child2 child5"
+        "child3 child4 child4 child5";
+    }
+  }
+}
